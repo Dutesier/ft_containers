@@ -12,6 +12,7 @@
 	// #include <map.hpp>
 	// #include <stack.hpp>
 	#include <vector.hpp>
+	#include <vector>
 #endif
 
 #include <stdlib.h>
@@ -47,6 +48,13 @@ void test_member_types(T x) {
 	// std::cout << "Reverse Iterator: " << riter << std::endl;
 	// std::cout << "Const Reverse Iterator: " << criter << std::endl;
 	static_cast<void>(x);
+
+}
+
+void test_rai(){
+	ft::vector<int> my_vector();
+
+	
 
 }
 
