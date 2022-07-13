@@ -59,11 +59,20 @@ void test_rai(){
 	// Setup
 	ft::vector<int> v;
 
-	// Test - Using my RAI as an iterator for std::vector
+	// Test - Using my RAI as an iterator for ft::vector
 	ft::vector<int>::iterator it = v.begin();
+	std::cout << "Iterator points to: " << it.base() << std::endl;
+	*it = 2;
 	for (; it != v.end(); it++) {
 		std::cout << *it << std::endl;
 	}
+	ft::vector<int>::iterator r = v.begin();
+	std::cout << "Iterator points to: " << r.base() << std::endl;
+	std::cout << r[0] << std::endl;
+	
+	it = v.begin();
+	std::cout << "Iterator points to: " << it.base() << std::endl;
+	std::cout << it[0] << std::endl;
 }
 
 int main(void) {

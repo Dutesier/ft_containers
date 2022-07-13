@@ -49,7 +49,7 @@ namespace ft {
     
     // Assignment operator
     random_access_iterator& operator=(const random_access_iterator& orig) {
-        *this = orig;
+        ptr = orig.ptr;
         return (*this);
     }
 

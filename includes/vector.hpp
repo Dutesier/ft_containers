@@ -29,7 +29,7 @@ namespace ft {
 		/****************/
 
 		vector():
-			data(new T[2]),
+			data(new T[1]),
 			begin_ptr(data),
 			end_ptr(data + 1){
 
@@ -43,11 +43,11 @@ namespace ft {
 		/* Iterator Functions */
 		// For testing only
 		iterator begin() {
-			return (begin_ptr);
+			return (iterator(begin_ptr));
 		}
 
 		iterator end() {
-			return (end_ptr);
+			return (iterator(end_ptr));
 		}
 		/**********************/
 
