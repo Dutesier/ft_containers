@@ -10,12 +10,12 @@ namespace ft {
     public:
 
     /*-------------------- Member Types -------------------------*/
-        typedef iterator_traits<T> iter_traits;
-        typedef iter_traits::difference_type difference_type;
-        typedef iter_traits::value_type value_type;
-        typedef iter_traits::pointer pointer;
-        typedef iter_traits::const_pointer const_pointer;
+        typedef T value_type;
         typedef value_type& reference;
+        typedef value_type *pointer;
+        typedef value_type& const_reference;
+        typedef value_type *const_pointer;
+        typedef std::ptrdiff_t difference_type;
         typedef std::random_access_iterator_tag iterator_category;
     /*-----------------------------------------------------------*/
 
@@ -34,7 +34,7 @@ namespace ft {
 
        
     /*-------------------- Constructors -------------------------*/
-    random_access_iterator():ptr(null){}
+    random_access_iterator():ptr(0){}
     random_access_iterator(pointer orig):ptr(orig){}
     random_access_iterator(const random_access_iterator& orig): ptr(orig.ptr){}
 
@@ -60,7 +60,7 @@ namespace ft {
 
     // Innequality operator
     bool operator!=(const random_access_iterator& right_hand_side) const {
-        return (ptr != right_hand_side.ptr)
+        return (ptr != right_hand_side.ptr);
     }
 
     // Dereference operator

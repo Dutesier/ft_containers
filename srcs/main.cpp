@@ -28,8 +28,8 @@ void test_member_types(T x) {
 	typename ft::vector<T>::difference_type dt;
 	typename ft::vector<T>::reference r = vt;
 	typename ft::vector<T>::const_reference cr = vt;
-	typename ft::vector<T>::pointer ptr;
-	typename ft::vector<T>::const_pointer cptr;
+	typename ft::vector<T>::pointer ptr = &r;
+	typename ft::vector<T>::const_pointer cptr = &cr;
 	// typename ft::vector<T>::iterator iter;
 	// typename ft::vector<T>::const_iterator citer;
 	// typename ft::vector<T>::reverse_iterator riter;
@@ -48,14 +48,22 @@ void test_member_types(T x) {
 	// std::cout << "Reverse Iterator: " << riter << std::endl;
 	// std::cout << "Const Reverse Iterator: " << criter << std::endl;
 	static_cast<void>(x);
+	std::cout << std::endl;
 
 }
 
+#include <vector>
 void test_rai(){
-	ft::vector<int> my_vector();
+	std::cout << "Testing Random Access Iterator" << std::endl;
 
-	
+	// Setup
+	ft::vector<int> v;
 
+	// Test - Using my RAI as an iterator for std::vector
+	ft::vector<int>::iterator it = v.begin();
+	for (; it != v.end(); it++) {
+		std::cout << *it << std::endl;
+	}
 }
 
 int main(void) {
@@ -65,6 +73,7 @@ int main(void) {
 	test_member_types(i);
 	test_member_types(f);
 	test_member_types(c);
+	test_rai();
 }
 
 // #define MAX_RAM 4294967296

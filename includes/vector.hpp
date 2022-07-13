@@ -28,14 +28,46 @@ namespace ft {
 
 		/****************/
 
-		vector():data(0){
+		vector():
+			data(new T[2]),
+			begin_ptr(data),
+			end_ptr(data + 1){
 
 		};
 		vector(const vector& orig);
 		vector &operator=(const vector& orig);
-		virtual ~vector();
+		virtual ~vector(){
+			delete[] data;
+		};
+
+		/* Iterator Functions */
+		// For testing only
+		iterator begin() {
+			return (begin_ptr);
+		}
+
+		iterator end() {
+			return (end_ptr);
+		}
+		/**********************/
+
+		/* Capacity */
+
+		/************/
+
+		/* Element Access */
+		/******************/
+		/* Modifiers */
+		/*************/
+
+		/* Allocator */
+		/*************/
+
+
 	private:
-		T*	data;
+		T*		data;
+		pointer	begin_ptr;
+		pointer end_ptr;
 
 	protected:
 	};
